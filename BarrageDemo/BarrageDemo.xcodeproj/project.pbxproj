@@ -13,6 +13,9 @@
 		187885B61F6D747B00CB7FF2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 187885B41F6D747B00CB7FF2 /* Main.storyboard */; };
 		187885B81F6D747B00CB7FF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 187885B71F6D747B00CB7FF2 /* Assets.xcassets */; };
 		187885BB1F6D747B00CB7FF2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 187885B91F6D747B00CB7FF2 /* LaunchScreen.storyboard */; };
+		187885C81F6D774600CB7FF2 /* BarrageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 187885C71F6D774600CB7FF2 /* BarrageManager.m */; };
+		187885CB1F6D775B00CB7FF2 /* BarrageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 187885CA1F6D775B00CB7FF2 /* BarrageView.m */; };
+		187885CE1F6D780D00CB7FF2 /* CommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 187885CD1F6D780D00CB7FF2 /* CommentModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,12 @@
 		187885B71F6D747B00CB7FF2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		187885BA1F6D747B00CB7FF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		187885BC1F6D747B00CB7FF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		187885C61F6D774600CB7FF2 /* BarrageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarrageManager.h; sourceTree = "<group>"; };
+		187885C71F6D774600CB7FF2 /* BarrageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarrageManager.m; sourceTree = "<group>"; };
+		187885C91F6D775B00CB7FF2 /* BarrageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarrageView.h; sourceTree = "<group>"; };
+		187885CA1F6D775B00CB7FF2 /* BarrageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarrageView.m; sourceTree = "<group>"; };
+		187885CC1F6D780D00CB7FF2 /* CommentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentModel.h; sourceTree = "<group>"; };
+		187885CD1F6D780D00CB7FF2 /* CommentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +67,7 @@
 		187885AA1F6D747B00CB7FF2 /* BarrageDemo */ = {
 			isa = PBXGroup;
 			children = (
+				187885C21F6D751A00CB7FF2 /* Barrage */,
 				187885AE1F6D747B00CB7FF2 /* AppDelegate.h */,
 				187885AF1F6D747B00CB7FF2 /* AppDelegate.m */,
 				187885B11F6D747B00CB7FF2 /* ViewController.h */,
@@ -77,6 +87,19 @@
 				187885AC1F6D747B00CB7FF2 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		187885C21F6D751A00CB7FF2 /* Barrage */ = {
+			isa = PBXGroup;
+			children = (
+				187885C61F6D774600CB7FF2 /* BarrageManager.h */,
+				187885C71F6D774600CB7FF2 /* BarrageManager.m */,
+				187885C91F6D775B00CB7FF2 /* BarrageView.h */,
+				187885CA1F6D775B00CB7FF2 /* BarrageView.m */,
+				187885CC1F6D780D00CB7FF2 /* CommentModel.h */,
+				187885CD1F6D780D00CB7FF2 /* CommentModel.m */,
+			);
+			name = Barrage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,8 +174,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				187885CB1F6D775B00CB7FF2 /* BarrageView.m in Sources */,
 				187885B31F6D747B00CB7FF2 /* ViewController.m in Sources */,
 				187885B01F6D747B00CB7FF2 /* AppDelegate.m in Sources */,
+				187885CE1F6D780D00CB7FF2 /* CommentModel.m in Sources */,
+				187885C81F6D774600CB7FF2 /* BarrageManager.m in Sources */,
 				187885AD1F6D747B00CB7FF2 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -312,6 +338,7 @@
 				187885C11F6D747B00CB7FF2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

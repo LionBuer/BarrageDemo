@@ -29,8 +29,8 @@ static NSTimeInterval const kAnimationDuration = 5.f;
 
 #pragma mark - lifecycle
 /** 初始化方法 */
-- (instancetype)init{
-    self = [super init];
+- (instancetype)initWithFrame:(CGRect)frame{
+    self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = [UIColor blueColor];
         
@@ -67,11 +67,12 @@ static NSTimeInterval const kAnimationDuration = 5.f;
     
     
     // 设置自身尺寸大小
-    self.bounds = CGRectMake(0, 0, commentLabelW + 2 * kCommentLabelPadding, kBarrageViewHeight);
+    CGFloat screenW = [UIScreen mainScreen].bounds.size.width;
+    CGFloat yPos = self.frame.origin.y;
+    self.frame = CGRectMake(screenW, yPos, commentLabelW + 2 * kCommentLabelPadding, kBarrageViewHeight);
     
     
     // 计算弹幕完全进入屏幕范围的时机,通知代理,自动追加新的弹幕
-    CGFloat screenW = [UIScreen mainScreen].bounds.size.width;
     CGFloat wholeW = screenW + CGRectGetWidth(self.bounds);
     CGFloat speed = wholeW / kAnimationDuration;
     // 这里用performSelector:withObject:afterDelay:这个延迟调用的方法而不用GCD的,是因为我们后面有可能要需要取消这个方法的调用
@@ -79,8 +80,13 @@ static NSTimeInterval const kAnimationDuration = 5.f;
     
     
     // 开始动画
-    [self startAnimationTo:wholeW];
+    [self startAnimation];
 }
+
+- (void)stopAnimation{
+    [self.layer removeAllAnimations];
+}
+
 
 #pragma mark - privateMethod
 - (void)barrageViewFullyIntoTheScreen{
@@ -89,12 +95,15 @@ static NSTimeInterval const kAnimationDuration = 5.f;
     }
 }
 
-- (void)startAnimationTo:(CGFloat)xPos{
+- (void)startAnimation{
     
+    __block CGRect frame = self.frame;
+    CGFloat width = CGRectGetWidth(frame);
+    
+        
     [UIView animateWithDuration:kAnimationDuration delay:0.f options:UIViewAnimationOptionCurveLinear animations:^{
         
-        CGRect frame = self.frame;
-        frame.origin.x = -xPos;
+        frame.origin.x = -width;
         self.frame = frame;
         
     } completion:^(BOOL finished) {

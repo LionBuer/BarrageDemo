@@ -11,7 +11,18 @@
 @implementation CommentModel
 
 
++ (instancetype)commentModelWithComment:(NSString *)comment{
+    return [[self alloc] initWithComment:comment];
+}
 
+
+- (instancetype)initWithComment:(NSString *)comment{
+    self = [super init];
+    if (self) {
+        _comment = comment;
+    }
+    return self;
+}
 
 
 @end

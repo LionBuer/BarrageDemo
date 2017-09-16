@@ -14,6 +14,7 @@
 
 @protocol BarrageViewDelegate <NSObject>
 
+@optional
 /**
  弹幕完全进入屏幕
 
@@ -46,5 +47,7 @@
  @param commentModel 弹幕内容模型
  */
 - (void)sendBarrageWithCommentModel:(CommentModel *)commentModel;
+
+
 
 @end
